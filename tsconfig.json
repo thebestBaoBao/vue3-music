@@ -1,16 +1,31 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-
+  "files": [],
   "references": [
     {
-      "path": "./tsconfig.node.json"
+      "path": "./tsconfig.vite-config.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
     }
-  ]
+  ],
+  // "include": [
+  //   "src/**/*.ts",
+  //   "src/**/*.d.ts",
+  //   "src/**/*.tsx",
+  //   "src/**/*.vue",
+  //   "./auto-imports.d.ts",
+  //   "./components.d.ts"
+  // ],
+  "compilerOptions": {
+    "baseUrl": "./",// 解析非相对模块的基础地址，默认是当前目录
+    "paths": {
+    // 路径映射，相对于baseUrl
+      "@/*":["src/*"]
+    },
+    "allowJs": true,
+    "verbatimModuleSyntax": true
+  }
 }
